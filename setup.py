@@ -13,6 +13,13 @@ setup(
     long_description=open("README.md").read(),
     zip_safe=False,
     packages=["mantid_sphinx_theme"],
+    package_data={
+        "mantid_sphinx_theme": [
+            "theme.conf",
+            "*.html",
+            "static/css/*.css",
+        ]
+    },
     include_package_data=True,
     # http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
     entry_points={
