@@ -18,6 +18,7 @@ setup(
             "theme.conf",
             "*.html",
             "static/css/*.css",
+            "static/images/*.png",
         ]
     },
     include_package_data=True,
