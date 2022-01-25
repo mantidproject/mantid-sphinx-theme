@@ -1,0 +1,12 @@
+[flake8]
+# References:
+# https://flake8.readthedocs.io/en/latest/user/configuration.html
+# https://flake8.readthedocs.io/en/latest/user/error-codes.html
+# match black
+max-line-length = 88
+exclude =
+    .git
+    build
+    # External files.
+    .tox
+    .eggs

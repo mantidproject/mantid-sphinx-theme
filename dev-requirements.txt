@@ -1,4 +1,0 @@
-pre-commit
-pytest
-pytest-regressions
-beautifulsoup4
