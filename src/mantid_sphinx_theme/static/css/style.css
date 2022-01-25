@@ -1,3 +1,14 @@
 :root {
-    --pst-color-primary: 0, 153, 51;
+  --pst-color-link: 0, 153, 51;
+  --pst-color-link-hover: 0, 153, 51;
 }
+
+  /* a {
+    color: 0, 153, 51;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: 0, 153, 51;
+    text-decoration: underline;
+  } */
