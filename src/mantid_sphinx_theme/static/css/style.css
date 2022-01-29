@@ -1,14 +1,18 @@
 :root {
+  /*****************************************************************************
+  * Color
+  *
+  * Colors are defined in rgb string way, "red, green, blue"
+  **/
+  /* Links are green */
   --pst-color-link: 0, 153, 51;
   --pst-color-link-hover: 0, 153, 51;
 }
 
-  /* a {
-    color: 0, 153, 51;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: 0, 153, 51;
-    text-decoration: underline;
-  } */
+/** Hide contents elements while they can be removed from the sphinx source
+ * The sidebars no give the same content.
+**/
+.contents {
+  display: none;
+  visibility: hidden;
+}
