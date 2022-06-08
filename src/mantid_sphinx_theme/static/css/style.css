@@ -1,3 +1,23 @@
-:root {
-    --pst-color-primary: 0, 153, 51;
+html[data-theme="light"] {
+  /*****************************************************************************
+  * Color
+  *
+  * Colors are defined in rgb string way, "red, green, blue"
+  **/
+  /* Links are green */
+  --pst-color-link: #339900;
+  --pst-color-link-hover: #339900;
+}
+
+/* Reduce the padding at the top */
+.bd-content {
+  padding-top: 1.5rem !important;
+}
+
+/** Hide contents elements while they can be removed from the sphinx source
+ * The sidebars no give the same content.
+**/
+.contents {
+  display: none;
+  visibility: hidden;
 }
