@@ -12,6 +12,19 @@ html[data-theme="light"] {
   --pst-color-link-hover: #339900;
 }
 
+html[data-theme="dark"] {
+  /*****************************************************************************
+  * Color
+  *
+  * Colors are defined in rgb string way, "red, green, blue"
+  **/
+  /* Primary is a inherited default light blue*/
+
+  /* Links are green */
+  --pst-color-link: #339900;
+  --pst-color-link-hover: #339900;
+}
+
 /* Reduce the padding at the top */
 .bd-content {
   padding-top: 1.5rem !important;
