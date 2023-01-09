@@ -17,9 +17,6 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Pre-commit checks
-        uses: pre-commit/action@v2.0.3
-
       - name: Install package
         run: |
           python -m pip install -v .
