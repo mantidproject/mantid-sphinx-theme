@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-"""Builds preview pages of the theme and starts a webserver if not already started
-"""
+"""Builds preview pages of the theme and starts a webserver if not already started"""
+
 from functools import partial
 from http.server import SimpleHTTPRequestHandler
 from pathlib import Path
