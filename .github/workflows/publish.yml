@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  PKG_NAME: mantid_sphinx_theme
+  PKG_NAME: mantid-sphinx-theme
 
 jobs:
   build:

@@ -2,7 +2,7 @@
 .pixi/*
 !.pixi/config.toml
 
-mantid_sphinx_theme*.conda
+mantid-sphinx-theme*.conda
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

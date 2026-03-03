@@ -44,10 +44,13 @@ preview = ["pixi-build"]
 pydata-sphinx-theme = ">=0.16.1"
 pre-commit = "*"
 
+[tool.pixi.pypi-dependencies]
+mantid_sphinx_theme = { path = ".", editable = true }
+
 # Pixi build configuration
 
 [tool.pixi.package]
-name = "mantid_sphinx_theme"
+name = "mantid-sphinx-theme"
 
 [tool.pixi.package.build]
 backend = { name = "pixi-build-python", version = "*" }
@@ -70,7 +73,6 @@ default = { features = ["build"], solve-group = "default" }
 [tool.pixi.feature.build.dependencies]
 anaconda-client = ">=1.13.0"
 check-wheel-contents = ">=0.6.2"
-versioningit = ">=3.2.0"
 
 # Tasks
 
