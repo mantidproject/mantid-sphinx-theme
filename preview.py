@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-"""Builds preview pages of the theme and starts a webserver if not already started
-"""
+"""Builds preview pages of the theme and starts a webserver if not already started"""
+
 from functools import partial
 from http.server import SimpleHTTPRequestHandler
 from pathlib import Path
@@ -51,9 +51,7 @@ def serve(serve_root: Path, port: int):
     """
     handler_class = partial(SimpleHTTPRequestHandler, directory=str(serve_root))
     with TCPServer(("", port), handler_class) as httpd:
-        print(
-            f"Serving HTTP on localhost port {port} " f"(http://localhost:{port}/) ..."
-        )
+        print(f"Serving HTTP on localhost port {port} (http://localhost:{port}/) ...")
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
