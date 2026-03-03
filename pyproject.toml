@@ -13,7 +13,7 @@ authors = [
 readme = "README.md"
 
 [project.urls]
-homepage = "https://mantidproject.org"
+homepage = "https://www.mantidproject.org"
 repository = "https://github.com/mantidproject/mantid-sphinx-theme"
 
 ####################
@@ -63,7 +63,7 @@ python = ">=3.11"
 hatchling = "*"
 
 [tool.pixi.package.run-dependencies]
-pydata-sphinx-theme = ">=0.16.1"
+pydata-sphinx-theme = ">=0.16.1,<1.0.0"
 
 # Environments and features
 
@@ -71,21 +71,5 @@ pydata-sphinx-theme = ">=0.16.1"
 default = { features = ["build"], solve-group = "default" }
 
 [tool.pixi.feature.build.dependencies]
-anaconda-client = ">=1.13.0"
-check-wheel-contents = ">=0.6.2"
-
-# Tasks
-
-[tool.pixi.tasks]
-# Packaging
-conda-build = { cmd = "pixi build", description = "Build the conda package" }
-conda-publish = { cmd = "anaconda upload *.conda", description = "Publish the .conda package to anaconda.org", depends-on = [
-    "conda-build",
-] }
-# Misc
-clean = { cmd = 'rm -rf .pytest_cache .ruff_cache **/*.egg-info **/dist **/__pycache__ **/_version.py', description = "Clean up various caches and build artifacts" }
-clean-conda = { cmd = "rm -f *.conda", description = "Clean the local .conda build artifacts" }
-clean-all = { description = "Clean all artifacts", depends-on = [
-    "clean",
-    "clean-conda",
-] }
+anaconda-client = ">=1.14.0"
+check-wheel-contents = ">=0.6.3"
