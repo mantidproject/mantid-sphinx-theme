@@ -1,3 +1,89 @@
+########################
+### Project Metadata ###
+########################
+
+[project]
+name = "mantid-sphinx-theme"
+version = "0.1.0"
+description = "A Sphinx theme for Mantid documentation"
+authors = [
+    { name = "Martyn Gigg" },
+    { name = "Glass Ships", email = "glass.ships@protonmail.com" },
+]
+readme = "README.md"
+
+[project.urls]
+homepage = "https://mantidproject.org"
+repository = "https://github.com/mantidproject/mantid-sphinx-theme"
+
+####################
+### Build config ###
+####################
+
 [build-system]
-requires = ["setuptools >= 40.6.0", "wheel"]
-build-backend = "setuptools.build_meta"
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mantid_sphinx_theme"]
+
+###################
+### Pixi config ###
+###################
+
+[tool.pixi.workspace]
+name = "mantid-sphinx-theme"
+platforms = ["linux-64", "osx-64", "win-64"]
+channels = ["conda-forge", "https://prefix.dev/pixi-build-backends"]
+# Required until the build feature becomes stable
+preview = ["pixi-build"]
+
+# Dependency tables
+
+[tool.pixi.dependencies]
+pydata-sphinx-theme = ">=0.16.1"
+pre-commit = "*"
+
+# Pixi build configuration
+
+[tool.pixi.package]
+name = "mantid_sphinx_theme"
+
+[tool.pixi.package.build]
+backend = { name = "pixi-build-python", version = "*" }
+
+[tool.pixi.package.build-dependencies]
+hatchling = "*"
+
+[tool.pixi.package.host-dependencies]
+python = ">=3.11"
+hatchling = "*"
+
+[tool.pixi.package.run-dependencies]
+pydata-sphinx-theme = ">=0.16.1"
+
+# Environments and features
+
+[tool.pixi.environments]
+default = { features = ["build"], solve-group = "default" }
+
+[tool.pixi.feature.build.dependencies]
+anaconda-client = ">=1.13.0"
+check-wheel-contents = ">=0.6.2"
+versioningit = ">=3.2.0"
+
+# Tasks
+
+[tool.pixi.tasks]
+# Packaging
+conda-build = { cmd = "pixi build", description = "Build the conda package" }
+conda-publish = { cmd = "anaconda upload *.conda", description = "Publish the .conda package to anaconda.org", depends-on = [
+    "conda-build",
+] }
+# Misc
+clean = { cmd = 'rm -rf .pytest_cache .ruff_cache **/*.egg-info **/dist **/__pycache__ **/_version.py', description = "Clean up various caches and build artifacts" }
+clean-conda = { cmd = "rm -f *.conda", description = "Clean the local .conda build artifacts" }
+clean-all = { description = "Clean all artifacts", depends-on = [
+    "clean",
+    "clean-conda",
+] }

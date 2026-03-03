@@ -1,3 +1,9 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+mantid_sphinx_theme*.conda
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
