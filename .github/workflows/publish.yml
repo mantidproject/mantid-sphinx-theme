@@ -14,6 +14,7 @@ concurrency:
 
 env:
   PKG_NAME: mantid-sphinx-theme
+  MOD_NAME: mantid_sphinx_theme
 
 jobs:
   build:
@@ -43,6 +44,7 @@ jobs:
           python-version: "3.11"
           local-channel: /tmp/local-channel
           package-name: ${{ env.PKG_NAME }}
+          module-name: ${{ env.MOD_NAME }}
           extra-commands: |
             which python
             python -c "import mantid_sphinx_theme"
