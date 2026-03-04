@@ -2153,7 +2153,7 @@ packages:
 - pypi: ./
   name: mantid-sphinx-theme
   version: 0.1.0
-  sha256: 0a137d581374cd6c7d3609619daa44f4f29672b825dc53bdc55fb1e687616158
+  sha256: 0f794a39d572df331bd0d9ad5c8bc09ff4fcbfe44c436afd4c057cdaf1ee8690
 - conda: https://conda.anaconda.org/conda-forge/noarch/markdown-it-py-4.0.0-pyhd8ed1ab_0.conda
   sha256: 7b1da4b5c40385791dbc3cc85ceea9fad5da680a27d5d3cb8bfaa185e304a89e
   md5: 5b5203189eb668f042ac2b0826244964
