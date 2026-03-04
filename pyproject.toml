@@ -55,6 +55,9 @@ name = "mantid-sphinx-theme"
 [tool.pixi.package.build]
 backend = { name = "pixi-build-python", version = "*" }
 
+[tool.pixi.pypi-options]
+no-build = true
+
 [tool.pixi.package.build-dependencies]
 hatchling = "*"
 
