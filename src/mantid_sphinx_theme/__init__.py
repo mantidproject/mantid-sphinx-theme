@@ -1,8 +1,12 @@
-"""Provides a Sphinx theme for Mantid project
-"""
-from ._version import __version__  # noqa: F401
+"""Provides a Sphinx theme for Mantid project"""
+
+from importlib import metadata
+
 
 from pathlib import Path
+
+__version__ = metadata.version("mantid-sphinx-theme")
+del metadata
 
 
 def get_html_theme_path():

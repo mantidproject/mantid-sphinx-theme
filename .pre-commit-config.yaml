@@ -1,26 +1,19 @@
-default_language_version:
-  python: python3
-
 repos:
-
   # General file linting
   - repo: https://github.com/pre-commit/pre-commit-hooks.git
-    rev: v4.4.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
         exclude: .patch$
       - id: check-added-large-files
-        args: ['--maxkb=4096']
+        args: ["--maxkb=4096"]
       - id: check-yaml
         args: [--allow-multiple-documents]
 
-  -   repo: https://github.com/psf/black
-      rev:  23.1.0
-      hooks:
-      - id: black
-
-  - repo: https://github.com/PyCQA/flake8.git
-    rev: 6.0.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.4
     hooks:
-      - id: flake8
+      - id: ruff-check
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format

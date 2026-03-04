@@ -1,3 +1,75 @@
+########################
+### Project Metadata ###
+########################
+
+[project]
+name = "mantid-sphinx-theme"
+version = "0.1.0"
+description = "A Sphinx theme for Mantid documentation"
+authors = [
+    { name = "Martyn Gigg" },
+    { name = "Glass Ships", email = "glass.ships@protonmail.com" },
+]
+readme = "README.md"
+
+[project.urls]
+homepage = "https://www.mantidproject.org"
+repository = "https://github.com/mantidproject/mantid-sphinx-theme"
+
+####################
+### Build config ###
+####################
+
 [build-system]
-requires = ["setuptools >= 40.6.0", "wheel"]
-build-backend = "setuptools.build_meta"
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mantid_sphinx_theme"]
+
+###################
+### Pixi config ###
+###################
+
+[tool.pixi.workspace]
+name = "mantid-sphinx-theme"
+platforms = ["linux-64", "osx-64", "win-64"]
+channels = ["conda-forge", "https://prefix.dev/pixi-build-backends"]
+# Required until the build feature becomes stable
+preview = ["pixi-build"]
+
+# Dependency tables
+
+[tool.pixi.dependencies]
+pydata-sphinx-theme = ">=0.16.1"
+pre-commit = "*"
+
+[tool.pixi.pypi-dependencies]
+mantid_sphinx_theme = { path = ".", editable = true }
+
+# Pixi build configuration
+
+[tool.pixi.package]
+name = "mantid-sphinx-theme"
+
+[tool.pixi.package.build]
+backend = { name = "pixi-build-python", version = "*" }
+
+[tool.pixi.package.build-dependencies]
+hatchling = "*"
+
+[tool.pixi.package.host-dependencies]
+python = ">=3.11"
+hatchling = "*"
+
+[tool.pixi.package.run-dependencies]
+pydata-sphinx-theme = ">=0.16.1,<1.0.0"
+
+# Environments and features
+
+[tool.pixi.environments]
+default = { features = ["build"], solve-group = "default" }
+
+[tool.pixi.feature.build.dependencies]
+anaconda-client = ">=1.14.0"
+check-wheel-contents = ">=0.6.3"
