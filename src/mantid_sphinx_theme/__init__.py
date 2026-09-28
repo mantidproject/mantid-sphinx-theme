@@ -1,8 +1,6 @@
 """Provides a Sphinx theme for Mantid project"""
 
 from importlib import metadata
-
-
 from pathlib import Path
 
 __version__ = metadata.version("mantid-sphinx-theme")
