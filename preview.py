@@ -6,6 +6,7 @@ from http.server import SimpleHTTPRequestHandler
 from pathlib import Path
 from socketserver import TCPServer
 from tempfile import TemporaryDirectory
+
 from sphinx.cmd.build import build_main as sphinx_main
 
 DEMO_SRC_DIR = Path(__file__).parent / "tests" / "sites" / "base"
